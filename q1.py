@@ -30,6 +30,17 @@ Explanation:
 
 
 def first_stable_character(s):
+  i=0
+    n=len(s)
+    while i<n:
+        j=i
+        while j < n and s[j] == s[i]:
+            j+=1
+        group_length =j-i
+        if group_length >=2:
+            if s[i] not in s[j:]:
+                return s[i]
+        i=j
     """
     Find the first stable character in the string.
 
